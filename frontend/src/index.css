@@ -1,0 +1,17 @@
+:root {
+  --primary-red: #ff5f5f;
+  --bg-app: #f4f7fc;
+  --bg-card: #ffffff;
+  --text-main: #333333;
+  --text-muted: #7a7a7a;
+  --status-completed: #2ecc71;
+  --status-progress: #3498db;
+  --status-not-started: #e74c3c;
+  --border-radius: 12px;
+  --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+  /* Font */
+  --paragraph: Poppins, sans-serif;
+  --heading: Inter, sans-serif;
+  
+}
