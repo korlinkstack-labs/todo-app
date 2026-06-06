@@ -9,9 +9,25 @@
   --status-not-started: #e74c3c;
   --border-radius: 12px;
   --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.05);
+   --white: #ffffff;        
+  --black: #000000;  
+
+ 
+
 
   /* Font */
   --paragraph: Poppins, sans-serif;
   --heading: Inter, sans-serif;
   
+}
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+
+html {
+  scroll-behavior: smooth;
 }

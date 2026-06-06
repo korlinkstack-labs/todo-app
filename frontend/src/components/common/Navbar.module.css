@@ -1,0 +1,105 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5% ;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: background 0.4s ease, padding 0.4s ease; 
+  width: 100%;  
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+}
+
+.scrolled {
+ background: var(--text-main);; 
+  padding: 1rem 5%;        
+  box-shadow: var(--shadow-subtle);
+}
+
+.scrolled a {
+  color: var(--white) !important;
+}
+
+.logo a {
+  font-family: var(--heading);
+  font-weight: 700;
+  color: var(--primary-red);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.linkItem a {
+  text-decoration: none;
+  color:var( --white); 
+  font-family: var(--paragraph);
+}
+
+hero {
+  padding-top: 80px; 
+}
+
+.navBtn {
+  background-color: var(--primary-red);
+  color: var( --white);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-family: var(--paragraph);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: var(--white); 
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  /* Ensure the main nav bar has a solid background on mobile so links are readable */
+  .nav {
+    background: var(--black); 
+  }
+
+  .hamburger { 
+    display: flex; 
+  }
+
+  .links {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 100%;
+    background: var(--bg-card);
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    box-shadow: var(--shadow-subtle);
+    z-index: 100;
+  }
+
+  .showMenu { 
+    display: flex; 
+  }
+
+  .linkItem a { 
+    color: var(--text-main); 
+  }
+
+  .arrow {
+    display: none;
+  }
+}

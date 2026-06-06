@@ -1,0 +1,49 @@
+.services {
+  padding: 5rem 5%;
+  background: var(--bg-app);
+}
+
+.title {
+  text-align: center;
+  /* Applying the brand heading font */
+  font-family: var(--heading);
+  margin-bottom: 3rem;
+  color: var(--text-main);
+}
+
+.card h3 {
+  /* Applying the brand heading font */
+  font-family: var(--heading);
+  margin: 1rem 0;
+  color: var(--text-main);
+}
+
+.card p {
+  /* Applying the brand paragraph font */
+  font-family: var(--paragraph);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: var(--shadow-subtle);
+  transition: 0.3s;
+}
+
+.card:hover { transform: translateY(-10px); }
+
+.icon {
+  font-size: 2.5rem;
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+}
