@@ -1,13 +1,16 @@
-import { useState } from 'react'
-function App() {
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
+import ScrollToTop from './components/common/ScrollToTop';
 
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <h1>Just Getting started.</h1>
-    </>
-  )
-}
+    // <AuthProvider> 
+      <BrowserRouter>
+        <AppRoutes />
+        <ScrollToTop /> 
+      </BrowserRouter>
+    // </AuthProvider>
+  );
+};
 
-export default App
+export default App;
