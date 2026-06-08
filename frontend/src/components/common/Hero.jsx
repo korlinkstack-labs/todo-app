@@ -15,38 +15,45 @@ const slides = [
 
 const Hero = () => {
   const [index, setIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const nextSlide = () => setIndex((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   useEffect(() => {
+    if (isPaused) return;
+
     const timer = setInterval(nextSlide, 6000);
     return () => clearInterval(timer);
-  }, [index]);
+  }, [isPaused]); 
 
   return (
     <section 
+      id="Hero"
       className={styles.hero} 
       style={{ backgroundImage: `url(${slides[index].img})` }}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
     >
       <div className={styles.overlay} />
 
       {/* Arrows */}
-      <button onClick={prevSlide} className={`${styles.arrow} ${styles.arrowLeft}`}>&lt;</button>
-      <button onClick={nextSlide} className={`${styles.arrow} ${styles.arrowRight}`}>&gt;</button>
+      <button onClick={prevSlide} className={`${styles.arrow} ${styles.arrowLeft}`} aria-label="Previous Slide">&lt;</button>
+      <button onClick={nextSlide} className={`${styles.arrow} ${styles.arrowRight}`} aria-label="Next Slide">&gt;</button>
       
-      {/* Dots */}
+
       <div className={styles.dots}>
         {slides.map((_, i) => (
           <button 
             key={i} 
             className={index === i ? `${styles.dot} ${styles.activeDot}` : styles.dot} 
-            onClick={() => setIndex(i)} 
+            onClick={() => setIndex(i)}
+            aria-label={`Go to slide ${i + 1}`}
           />
         ))}
       </div>
       
-      <div className={styles.slideContainer}>
+      <div className={styles.slideContainer} aria-live="polite">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
